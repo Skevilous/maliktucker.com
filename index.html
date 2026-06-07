@@ -774,28 +774,23 @@
     <section class="section reveal" id="coaching">
       <div class="section-heading">
         <h2>Work With Me</h2>
-        <p>1-on-1 coaching for founders and builders who want to move faster with AI</p>
+        <p>1-on-1 coaching for founders and builders who want to move faster with AI. Spots opening soon.</p>
       </div>
-      <div class="cards-grid">
-        <article class="card">
-          <span class="card-number">01</span>
-          <h3>Launch Your App</h3>
-          <p>iOS App Store submission end to end.</p>
-        </article>
-        <article class="card">
-          <span class="card-number">02</span>
-          <h3>Get Your Site Live</h3>
-          <p>GitHub, deployment, custom domain sorted in one session.</p>
-        </article>
-        <article class="card">
-          <span class="card-number">03</span>
-          <h3>AI Workflow Setup</h3>
-          <p>Learn to build with Claude/Codex, no CS degree needed.</p>
-        </article>
-      </div>
-      <div class="button-row">
-        <a class="button primary" href="https://calendly.com/maliktucker">Book a Session</a>
-      </div>
+      <form id="coaching-form" style="display:flex;flex-wrap:wrap;gap:14px;max-width:520px;">
+        <input type="email" id="coaching-email" placeholder="your@email.com" required
+          style="flex:1;min-width:220px;height:50px;padding:0 18px;border:1px solid var(--border);border-radius:999px;font-size:0.96rem;font-family:inherit;outline:none;">
+        <button type="submit" class="button primary" style="min-width:160px;">Notify Me</button>
+      </form>
+      <p id="coaching-confirm" style="display:none;margin-top:16px;color:#0066ff;font-weight:700;">You're on the list. I'll reach out when spots open.</p>
+      <script>
+        document.getElementById('coaching-form').addEventListener('submit', function(e) {
+          e.preventDefault();
+          var email = document.getElementById('coaching-email').value;
+          window.location.href = 'mailto:maliktucker@hotmail.com?subject=Coaching%20Interest&body=Email%3A%20' + encodeURIComponent(email);
+          document.getElementById('coaching-form').style.display = 'none';
+          document.getElementById('coaching-confirm').style.display = 'block';
+        });
+      </script>
     </section>
 
     <section class="section contact reveal" id="contact">
